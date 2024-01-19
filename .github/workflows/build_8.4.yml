@@ -91,7 +91,7 @@ jobs:
     - name: Set Environment Variable
       run: echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
     - name: Use Environment Variable
-      run: echo "The value of GITHUB_WORKSPACE is %GITHUB_WORKSPACE%"
+      run: printf 'The value of GITHUB_WORKSPACE is %s\n' "$GITHUB_WORKSPACE"
 
     - uses: actions/checkout@v2
     - name: Run build script
@@ -116,7 +116,7 @@ jobs:
     - name: Set Environment Variable
       run: echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
     - name: Use Environment Variable
-      run: echo "The value of GITHUB_WORKSPACE is %GITHUB_WORKSPACE%"
+      run: printf 'The value of GITHUB_WORKSPACE is %s\n' "$GITHUB_WORKSPACE"
       
     - uses: actions/checkout@v2
     - name: Run build script
@@ -136,7 +136,7 @@ jobs:
     - name: Set Environment Variable
       run: echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
     - name: Use Environment Variable
-      run: echo "The value of GITHUB_WORKSPACE is %GITHUB_WORKSPACE%"
+      run: printf 'The value of GITHUB_WORKSPACE is %s\n' "$GITHUB_WORKSPACE"
       
     - uses: actions/checkout@v2
     - name: Run build script
@@ -156,7 +156,7 @@ jobs:
     - name: Set Environment Variable
       run: echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
     - name: Use Environment Variable
-      run: echo "The value of GITHUB_WORKSPACE is %GITHUB_WORKSPACE%"
+      run: printf 'The value of GITHUB_WORKSPACE is %s\n' "$GITHUB_WORKSPACE"
       
     - uses: actions/checkout@v2
     - name: Run build script
