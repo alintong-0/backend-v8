@@ -35,7 +35,7 @@ mkdir v8
 cd v8
 
 echo "=====[ Fetching V8 ]====="
-git clone https://github.com/alintong-0/v8.git v8
+fetch v8
 echo "target_os = ['android']" >> .gclient
 cd ~/v8/v8
 ./build/install-build-deps-android.sh

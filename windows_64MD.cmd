@@ -19,12 +19,14 @@ mkdir v8
 cd v8
 
 echo =====[ Fetching V8 ]=====
-git clone https://github.com/alintong-0/v8.git v8
+call fetch v8
 cd v8
 call git checkout refs/tags/%VERSION%
 cd test\test262\data
 call git config --system core.longpaths true
 call git restore *
+
+call git clone https://github.com/alintong-0/v8.git v8
 cd ..\..\..\
 call gclient sync
 
