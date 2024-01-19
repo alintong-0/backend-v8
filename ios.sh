@@ -15,7 +15,7 @@ mkdir v8
 cd v8
 
 echo "=====[ Fetching V8 ]====="
-fetch v8
+git clone https://github.com/alintong-0/v8.git v8
 echo "target_os = ['ios']" >> .gclient
 cd ~/v8/v8
 git checkout refs/tags/$VERSION

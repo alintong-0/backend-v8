@@ -19,7 +19,7 @@ mkdir v8
 cd v8
 
 echo =====[ Fetching V8 ]=====
-call fetch v8
+git clone https://github.com/alintong-0/v8.git v8
 cd v8
 call git checkout refs/tags/%VERSION%
 cd test\test262\data
