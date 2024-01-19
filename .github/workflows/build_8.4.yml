@@ -89,7 +89,7 @@ jobs:
     runs-on: windows-2019
     steps:
     - name: Set Environment Variable
-      run: echo "::set-env name=GITHUB_WORKSPACE::C:/a/backend-v8/backend-v8"
+      run: echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
     - name: Use Environment Variable
       run: echo "The value of GITHUB_WORKSPACE is %GITHUB_WORKSPACE%"
 
@@ -114,7 +114,7 @@ jobs:
     runs-on: windows-2019
     steps:
     - name: Set Environment Variable
-      run: echo "::set-env name=GITHUB_WORKSPACE::C:/a/backend-v8/backend-v8"
+      run: echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
     - name: Use Environment Variable
       run: echo "The value of GITHUB_WORKSPACE is %GITHUB_WORKSPACE%"
       
@@ -134,7 +134,7 @@ jobs:
     runs-on: windows-2019
     steps:
     - name: Set Environment Variable
-      run: echo "::set-env name=GITHUB_WORKSPACE::C:/a/backend-v8/backend-v8"
+      run: echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
     - name: Use Environment Variable
       run: echo "The value of GITHUB_WORKSPACE is %GITHUB_WORKSPACE%"
       
@@ -154,7 +154,7 @@ jobs:
     runs-on: windows-2019
     steps:
     - name: Set Environment Variable
-      run: echo "::set-env name=GITHUB_WORKSPACE::C:/a/backend-v8/backend-v8"
+      run: echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
     - name: Use Environment Variable
       run: echo "The value of GITHUB_WORKSPACE is %GITHUB_WORKSPACE%"
       
