@@ -9,6 +9,7 @@ set GYP_MSVS_VERSION=2019
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
 
 @REM 这里处理v8源码仓库镜像
+echo =====[ Reset V8 Git ]=====
 setlocal enabledelayedexpansion
 
 set inputFile="./depot_tools/fetch_configs/v8.py"
