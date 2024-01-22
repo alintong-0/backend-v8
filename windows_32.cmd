@@ -15,10 +15,6 @@ call git reset --hard 8d16d4a
 cd ..
 set DEPOT_TOOLS_UPDATE=0
 
-
-mkdir v8
-cd v8
-
 @REM 这里处理v8源码仓库镜像
 echo =====[ Reset V8 Git ]=====
 setlocal enabledelayedexpansion
@@ -41,6 +37,9 @@ powershell -Command "(Get-Content %inputFile2%) -replace '%searchString2%', '%re
 powershell -Command "(Get-Content %inputFile3%) -replace '%searchString3%', '%replaceString3%' | Set-Content %inputFile3%"
 
 endlocal
+
+mkdir v8
+cd v8
 
 echo =====[ Fetching V8 ]=====
 call fetch v8
