@@ -24,6 +24,7 @@ powershell -Command "(Get-Content %inputFile%) -replace '%searchString%', '%repl
 rem 重命名输出文件为原始文件名
 move /y %outputFile% %inputFile%
 
+type %inputFile%
 endlocal
 
 call gclient
