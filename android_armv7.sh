@@ -31,6 +31,25 @@ export PATH=$(pwd)/depot_tools:$PATH
 gclient
 
 
+# 处理v8源码仓库镜像
+echo "=====[ Reset V8 Git ]====="
+inputFile="./depot_tools/fetch_configs/v8.py"
+inputFile2="./depot_tools/metrics_utils.py"
+inputFile3="./depot_tools/recipes/recipe_modules/bot_update/examples/full.py"
+
+searchString="https://chromium.googlesource.com/v8/v8.git"
+searchString3="https://chromium.googlesource.com/v8/v8"
+replaceString="https://github.com/alintong-0/v8.git"
+replaceString3="https://github.com/alintong-0/v8"
+
+searchString2="KNOWN_PROJECT_URLS = {"
+replaceString2="KNOWN_PROJECT_URLS = {\"https://github.com/alintong-0/v8\","
+
+# 使用sed命令替换文件中的字符串
+sed -i "s|$searchString|$replaceString|g" "$inputFile"
+sed -i "s|$searchString2|$replaceString2|g" "$inputFile2"
+sed -i "s|$searchString3|$replaceString3|g" "$inputFile3"
+
 mkdir v8
 cd v8
 
