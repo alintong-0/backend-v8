@@ -7,6 +7,24 @@ powershell -command "Invoke-WebRequest https://storage.googleapis.com/chrome-inf
 set PATH=%CD%\depot_tools;%PATH%
 set GYP_MSVS_VERSION=2019
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
+
+@REM 这里处理v8源码仓库镜像
+setlocal enabledelayedexpansion
+
+set inputFile="./depot_tools/fetch_configs/v8.py"
+set outputFile="./depot_tools/fetch_configs/v8_temp.py"
+
+set searchString="https://chromium.googlesource.com/v8/v8.git"
+set replaceString="https://github.com/alintong-0/v8.git"
+
+rem 用 powershell 命令读取文件并替换字符串
+powershell -Command "(Get-Content %inputFile%) -replace '%searchString%', '%replaceString%' | Set-Content %outputFile%"
+
+rem 重命名输出文件为原始文件名
+move /y %outputFile% %inputFile%
+
+endlocal
+
 call gclient
 
 cd depot_tools
