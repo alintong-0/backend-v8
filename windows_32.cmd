@@ -13,7 +13,7 @@ echo =====[ Reset V8 Git ]=====
 setlocal enabledelayedexpansion
 
 set inputFile="./depot_tools/fetch_configs/v8.py"
-set inputFile2="./depot_tools/fetch_configs/metrics_utils.py"
+set inputFile2="./depot_tools/metrics_utils.py"
 
 set searchString="https://chromium.googlesource.com/v8/v8.git"
 set replaceString="https://github.com/alintong-0/v8.git"
