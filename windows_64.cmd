@@ -1,6 +1,7 @@
 set VERSION=%1
+
 cd %HOMEPATH%
-echo =====[ Getting Depot Tools ]=====  %HOMEPATH%
+echo =====[ Getting Depot Tools ]=====
 powershell -command "Invoke-WebRequest https://storage.googleapis.com/chrome-infra/depot_tools.zip -O depot_tools.zip"
 7z x depot_tools.zip -o*
 set PATH=%CD%\depot_tools;%PATH%
@@ -24,8 +25,6 @@ call git checkout refs/tags/%VERSION%
 cd test\test262\data
 call git config --system core.longpaths true
 call git restore *
-
-call git clone https://github.com/alintong-0/v8.git v8
 cd ..\..\..\
 call gclient sync
 
@@ -38,6 +37,7 @@ echo =====[ add ArrayBuffer_New_Without_Stl ]=====
 node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
 
 echo =====[ Building V8 ]=====
+D:
 call gn gen out.gn\x64.release -args="target_os=""win"" target_cpu=""x64"" v8_use_external_startup_data=false v8_enable_i18n_support=false is_debug=false v8_static_library=true is_clang=false strip_debug_info=true symbol_level=0 v8_enable_pointer_compression=false"
 
 call ninja -C out.gn\x64.release -t clean
