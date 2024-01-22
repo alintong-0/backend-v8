@@ -1,5 +1,4 @@
 set VERSION=%1
-set HOMEPATH = "C:"
 cd %HOMEPATH%
 echo =====[ Getting Depot Tools ]=====  %HOMEPATH%
 powershell -command "Invoke-WebRequest https://storage.googleapis.com/chrome-infra/depot_tools.zip -O depot_tools.zip"
@@ -8,7 +7,6 @@ set PATH=%CD%\depot_tools;%PATH%
 set GYP_MSVS_VERSION=2019
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
 call gclient
-call config
 
 cd depot_tools
 call git reset --hard 8d16d4a
