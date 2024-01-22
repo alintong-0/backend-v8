@@ -97,6 +97,7 @@ jobs:
     - name: Run build script
       shell: cmd
       run: |
+        echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
         cd %GITHUB_WORKSPACE%
         call .\windows_64.cmd ${{env.VERSION}}
     - uses: actions/upload-artifact@v2
@@ -122,6 +123,7 @@ jobs:
     - name: Run build script
       shell: cmd
       run: |
+        echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
         cd %GITHUB_WORKSPACE%
         call .\windows_64MD.cmd ${{env.VERSION}}
     - uses: actions/upload-artifact@v2
@@ -142,6 +144,7 @@ jobs:
     - name: Run build script
       shell: cmd
       run: |
+        echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
         cd %GITHUB_WORKSPACE%
         call .\windows_64MD_DLL.cmd ${{env.VERSION}}
     - uses: actions/upload-artifact@v2
@@ -162,6 +165,7 @@ jobs:
     - name: Run build script
       shell: cmd
       run: |
+        echo "GITHUB_WORKSPACE=C:/a/backend-v8/backend-v8" >> "$GITHUB_ENV"
         cd %GITHUB_WORKSPACE%
         call .\windows_32.cmd ${{env.VERSION}}
     - uses: actions/upload-artifact@v2

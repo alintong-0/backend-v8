@@ -1,7 +1,7 @@
 set VERSION=%1
 
-cd %GITHUB_WORKSPACE%
-echo =====[ Getting Depot Tools ]=====  %GITHUB_WORKSPACE%
+cd %HOMEPATH%
+echo =====[ Getting Depot Tools ]=====  %HOMEPATH%
 powershell -command "Invoke-WebRequest https://storage.googleapis.com/chrome-infra/depot_tools.zip -O depot_tools.zip"
 7z x depot_tools.zip -o*
 set PATH=%CD%\depot_tools;%PATH%
