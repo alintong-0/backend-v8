@@ -13,12 +13,17 @@ echo =====[ Reset V8 Git ]=====
 setlocal enabledelayedexpansion
 
 set inputFile="./depot_tools/fetch_configs/v8.py"
+set inputFile2="./depot_tools/fetch_configs/metrics_utils.py"
 
 set searchString="https://chromium.googlesource.com/v8/v8.git"
 set replaceString="https://github.com/alintong-0/v8.git"
 
+set searchString2="https://chromium.googlesource.com/v8/v8"
+set replaceString2="https://github.com/alintong-0/v8"
+
 rem 用 powershell 命令读取文件并替换字符串
 powershell -Command "(Get-Content %inputFile%) -replace '%searchString%', '%replaceString%' | Set-Content %inputFile%"
+powershell -Command "(Get-Content %inputFile2%) -replace '%searchString%', '%replaceString%' | Set-Content %inputFile2%"
 
 endlocal
 
