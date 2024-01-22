@@ -31,8 +31,8 @@ set searchString2="KNOWN_PROJECT_URLS = {"
 set replaceString2="KNOWN_PROJECT_URLS = {\"https://github.com/alintong-0/v8\","
 
 rem 用 powershell 命令读取文件并替换字符串
-powershell -Command "(Get-Content %inputFile%) -replace '%searchString%', '%replaceString%' | Set-Content %inputFile%"
-powershell -Command "(Get-Content %inputFile2%) -replace '%searchString2%', '%replaceString2%' | Set-Content %inputFile2%"
+@REM powershell -Command "(Get-Content %inputFile%) -replace '%searchString%', '%replaceString%' | Set-Content %inputFile%"
+@REM powershell -Command "(Get-Content %inputFile2%) -replace '%searchString2%', '%replaceString2%' | Set-Content %inputFile2%"
 powershell -Command "(Get-Content %inputFile3%) -replace '%searchString3%', '%replaceString3%' | Set-Content %inputFile3%"
 
 endlocal
