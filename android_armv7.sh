@@ -55,7 +55,7 @@ node $GITHUB_WORKSPACE/node-script/add_arraybuffer_new_without_stl.js .
 
 echo =====[ Reset V8 Git ]=====
 cd ..
-call git clone "https://github.com/alintong-0/v8.git" v8_temp
+git clone "https://github.com/alintong-0/v8.git" v8_temp
 python replaceV8.py
 
 echo "=====[ Building V8 ]====="
