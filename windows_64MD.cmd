@@ -1,6 +1,8 @@
 set VERSION=%1
 
-cd %HOMEPATH%
+C:
+mkdir v8_build
+cd v8_build
 echo =====[ Getting Depot Tools ]=====
 powershell -command "Invoke-WebRequest https://storage.googleapis.com/chrome-infra/depot_tools.zip -O depot_tools.zip"
 7z x depot_tools.zip -o*
@@ -19,15 +21,6 @@ cd v8
 
 echo =====[ Fetching V8 ]=====
 call fetch v8
-
-echo =====[ Copy Build Env ]=====
-xcopy D:\a\backend-v8\backend-v8 C:\v8_build /E /H /C /I /Q /Y
-C: & cd C:/v8_build
-dir
-cd ./v8
-dir
-
-echo =====[ Contine Fetching V8 ]=====
 cd v8
 call git checkout refs/tags/%VERSION%
 cd test\test262\data
