@@ -2,7 +2,7 @@ import os
 import shutil
 
 source_directory = "./v8_temp"
-destination_directory = "./v8"
+destination_directory = "./v8/v8/"
 
 current_directory = os.path.abspath(os.path.dirname(__file__))
 
