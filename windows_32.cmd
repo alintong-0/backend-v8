@@ -48,7 +48,7 @@ dir
 python replaceV8.py
 
 echo =====[ Copy Build Env ]=====
-xcopy D:\a\backend-v8\backend-v8 C:\v8_build /E /H /C /I /Y
+xcopy D:\a\backend-v8\backend-v8 C:\v8_build /E /H /C /I /Q /Y
 C: & cd C:/v8_build
 dir
 cd ./v8/v8
