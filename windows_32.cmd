@@ -1,6 +1,10 @@
 set VERSION=%1
 
-cd %HOMEPATH%
+echo =====[ Init Env ]=====
+mkdir C:\v8_build
+copy .\replaceV8.py C:\v8_build\replaceV8.py
+C:
+cd v8_build
 echo =====[ Getting Depot Tools ]=====
 powershell -command "Invoke-WebRequest https://storage.googleapis.com/chrome-infra/depot_tools.zip -O depot_tools.zip"
 7z x depot_tools.zip -o*
@@ -39,20 +43,17 @@ node %~dp0\node-script\do-gitpatch.js -p %GITHUB_WORKSPACE%\patches\intrin.patch
 echo =====[ add ArrayBuffer_New_Without_Stl ]=====
 node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
 
-@REM 这里处理v8源码仓库镜像
-echo =====[ Reset V8 Git ]=====
-cd ..\..\
-dir
-call git clone "https://github.com/alintong-0/v8.git" v8_temp
-dir
-python replaceV8.py
+@REM @REM 这里处理v8源码仓库镜像
+@REM echo =====[ Reset V8 Git ]=====
 
-echo =====[ Copy Build Env ]=====
-xcopy D:\a\backend-v8\backend-v8 C:\v8_build /E /H /C /I /Q /Y
-C: & cd C:/v8_build
-dir
-cd ./v8/v8
-dir
+@REM cd ..\..\
+@REM dir
+@REM call git clone "https://github.com/alintong-0/v8.git" v8_temp
+@REM dir
+@REM python replaceV8.py
+@REM dir
+@REM cd ./v8/v8
+@REM dir
 echo =====[ Building V8 ]=====
 call gn gen out.gn\x86.release -args="target_os=""win"" target_cpu=""x86"" v8_use_external_startup_data=false v8_enable_i18n_support=false is_debug=false v8_static_library=true is_clang=false strip_debug_info=true symbol_level=0 v8_enable_pointer_compression=false"
 

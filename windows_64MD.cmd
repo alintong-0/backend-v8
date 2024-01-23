@@ -1,4 +1,5 @@
 set VERSION=%1
+echo =====[ Init Env ]=====
 mkdir C:\v8_build
 copy .\replaceV8.py C:\v8_build\replaceV8.py
 C:
