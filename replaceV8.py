@@ -1,19 +1,19 @@
-def search_and_replace(file_path, search_string, replace_string):
-    try:
-        with open(file_path, 'r') as file:
-            lines = file.readlines()
-        with open(file_path, 'w') as file:
-            for line in lines:
-                updated_line = line.replace(search_string, replace_string)
-                file.write(updated_line)
-        
-        print("done!")
-    
-    except FileNotFoundError:
-        print("file not found")
+import os
+import shutil
 
-filePath = "./depot_tools/git_cache.py"
-searchString="gclient_utils.CheckCallAndFilter([self.git_exe] + cmd, **kwargs)"
-replaceString="(lambda cmd : gclient_utils.CheckCallAndFilter([self.git_exe] + cmd.replace('https://chromium.googlesource.com/v8/v8.git','https://github.com/alintong-0/v8.git'), **kwargs) if 'https://chromium.googlesource.com/v8/v8.git' in cmd else gclient_utils.CheckCallAndFilter([self.git_exe] + cmd, **kwargs))()"
+# 定义两个文件目录的路径
+source_directory = "./v8_temp"
+destination_directory = "./v8"
 
-search_and_replace(filePath, searchString, replaceString)
+# 遍历源文件目录
+for root, dirs, files in os.walk(source_directory):
+    for file_name in files:
+        source_file_path = os.path.join(root, file_name)
+        destination_file_path = os.path.join(destination_directory, file_name)
+
+        # 检查目标文件是否存在，如果存在则替换
+        if os.path.exists(destination_file_path):
+            print(f"replace file~~~{file_name}")
+            shutil.copy2(source_file_path, destination_file_path)
+
+print("all done!!")
