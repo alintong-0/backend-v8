@@ -22,17 +22,6 @@ export DEPOT_TOOLS_UPDATE=0
 export PATH=$(pwd)/depot_tools:$PATH
 gclient
 
-
-# 处理v8源码仓库镜像
-echo "=====[ Reset V8 Git ]====="
-inputFile="./depot_tools/fetch_configs/v8.py"
-searchString="https://chromium.googlesource.com/v8/v8.git"
-replaceString="https://github.com/alintong-0/v8.git"
-
-# 使用sed命令替换文件中的字符串
-sed -i "s|$searchString|$replaceString|g" "$inputFile"
-
-
 mkdir v8
 cd v8
 
@@ -55,6 +44,11 @@ gclient sync
 
 echo "=====[ add ArrayBuffer_New_Without_Stl ]====="
 node $GITHUB_WORKSPACE/node-script/add_arraybuffer_new_without_stl.js .
+
+echo =====[ Reset V8 Git ]=====
+cd ..
+call git clone "https://github.com/alintong-0/v8.git" v8_temp
+python replaceV8.py
 
 echo "=====[ Building V8 ]====="
 python ./tools/dev/v8gen.py arm64.release -vv -- '
