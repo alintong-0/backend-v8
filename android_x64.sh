@@ -46,7 +46,7 @@ echo "=====[ add ArrayBuffer_New_Without_Stl ]====="
 node $GITHUB_WORKSPACE/node-script/add_arraybuffer_new_without_stl.js .
 
 echo =====[ Reset V8 Git ]=====
-cd ..
+cd ../../
 git clone "https://github.com/alintong-0/v8.git" v8_temp
 python replaceV8.py
 
