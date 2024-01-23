@@ -1,21 +1,26 @@
 import os
 import shutil
 
-source_directory = "./v8_temp"
-destination_directory = "./v8/v8/"
+source_directory = "./v8_temp/src"
+destination_directory = "./v8/v8/src"
 
 current_directory = os.path.abspath(os.path.dirname(__file__))
 
 print("now run root : ", current_directory)
 
-for root, dirs, files in os.walk(source_directory):
-    for file_name in files:
-        source_file_path = os.path.join(root, file_name)
-        destination_file_path = os.path.join(destination_directory, file_name)
+def recursive_replace(src_dir, dest_dir):
+    for item in os.listdir(src_dir):
+        src_item = os.path.join(src_dir, item)
+        dest_item = os.path.join(dest_dir, item)
+
+        if os.path.isdir(src_item):
+            if not os.path.exists(dest_item):
+                os.makedirs(dest_item)
+            recursive_replace(src_item, dest_item)
+        else:
+            print(f"replace file~~~{src_item}")
+            shutil.copy2(src_item, dest_item)
 
 
-        if os.path.exists(destination_file_path):
-            print(f"replace file~~~{file_name}")
-            shutil.copy2(source_file_path, destination_file_path)
-
+recursive_replace(source_directory, destination_directory)
 print("all done!!")
