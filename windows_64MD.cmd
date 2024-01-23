@@ -19,6 +19,15 @@ cd v8
 
 echo =====[ Fetching V8 ]=====
 call fetch v8
+
+echo =====[ Copy Build Env ]=====
+xcopy D:\a\backend-v8\backend-v8 C:\v8_build /E /H /C /I /Q /Y
+C: & cd C:/v8_build
+dir
+cd ./v8
+dir
+
+echo =====[ Contine Fetching V8 ]=====
 cd v8
 call git checkout refs/tags/%VERSION%
 cd test\test262\data
@@ -38,20 +47,20 @@ node %~dp0\node-script\rep.js  build\config\win\BUILD.gn
 echo =====[ add ArrayBuffer_New_Without_Stl ]=====
 node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
 
-@REM 这里处理v8源码仓库镜像
-echo =====[ Reset V8 Git ]=====
-cd ..\..\
-dir
-call git clone "https://github.com/alintong-0/v8.git" v8_temp
-dir
-python replaceV8.py
+@REM @REM 这里处理v8源码仓库镜像
+@REM echo =====[ Reset V8 Git ]=====
+@REM cd ..\..\
+@REM dir
+@REM call git clone "https://github.com/alintong-0/v8.git" v8_temp
+@REM dir
+@REM python replaceV8.py
 
-echo =====[ Copy Build Env ]=====
-xcopy D:\a\backend-v8\backend-v8 C:\v8_build /E /H /C /I /Q /Y
-C: & cd C:/v8_build
-dir
-cd ./v8/v8
-dir
+@REM echo =====[ Copy Build Env ]=====
+@REM xcopy D:\a\backend-v8\backend-v8 C:\v8_build /E /H /C /I /Q /Y
+@REM C: & cd C:/v8_build
+@REM dir
+@REM cd ./v8/v8
+@REM dir
 echo =====[ Building V8 ]=====
 call gn gen out.gn\x64.release -args="target_os=""win"" target_cpu=""x64"" v8_use_external_startup_data=false v8_enable_i18n_support=false is_debug=false v8_static_library=true is_clang=false strip_debug_info=true symbol_level=0 v8_enable_pointer_compression=false"
 
