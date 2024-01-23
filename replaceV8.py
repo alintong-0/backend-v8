@@ -4,6 +4,9 @@ import shutil
 source_directory = "./v8_temp"
 destination_directory = "./v8"
 
+current_directory = os.path.abspath(os.path.dirname(__file__))
+
+print("now run root : ", current_directory)
 
 for root, dirs, files in os.walk(source_directory):
     for file_name in files:
