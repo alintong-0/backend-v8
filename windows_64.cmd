@@ -1,3 +1,4 @@
+chcp 65001
 set VERSION=%1
 echo =====[ Init Env ]=====
 mkdir C:\v8_build
