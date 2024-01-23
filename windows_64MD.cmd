@@ -16,16 +16,7 @@ set DEPOT_TOOLS_UPDATE=0
 
 @REM 这里处理v8源码仓库镜像
 echo =====[ Reset V8 Git ]=====
-setlocal enabledelayedexpansion
-
-set inputFile="./depot_tools/fetch_configs/v8.py"
-set searchString="https://chromium.googlesource.com/v8/v8.git"
-set replaceString="https://github.com/alintong-0/v8.git"
-
-rem 用 powershell 命令读取文件并替换字符串
-powershell -Command "(Get-Content %inputFile%) -replace '%searchString%', '%replaceString%' | Set-Content %inputFile%"
-
-endlocal
+python replaceV8.py
 
 mkdir v8
 cd v8

@@ -10,7 +10,7 @@ set DEPOT_TOOLS_WIN_TOOLCHAIN=0
 call gclient
 
 cd depot_tools
-call git reset --hard 8d16d4a
+@REM call git reset --hard 8d16d4a
 cd ..
 set DEPOT_TOOLS_UPDATE=0
 
