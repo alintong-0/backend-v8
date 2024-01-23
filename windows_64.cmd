@@ -38,10 +38,14 @@ echo =====[ add ArrayBuffer_New_Without_Stl ]=====
 node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
 
 @REM 这里处理v8源码仓库镜像
-echo =====[ Reset V8 Git ]=====
-cd ..\..\
+echo =====[ Reset V8 Git ]=====  %HOMEPATH%/replaceV8.py
+
+cd ..\
+dir
+cd ..\
 dir
 call git clone "https://github.com/alintong-0/v8.git" v8_temp
+xcopy %HOMEPATH%/replaceV8.py ./replaceV8.py
 dir
 python replaceV8.py
 dir
