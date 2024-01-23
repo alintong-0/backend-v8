@@ -54,10 +54,10 @@ echo "=====[ add ArrayBuffer_New_Without_Stl ]====="
 node $GITHUB_WORKSPACE/node-script/add_arraybuffer_new_without_stl.js .
 
 echo =====[ Reset V8 Git ]=====
-cd ../../
+cd ~
 git clone "https://github.com/alintong-0/v8.git" v8_temp
 python replaceV8.py
-
+cd ~/v8/v8
 echo "=====[ Building V8 ]====="
 python ./tools/dev/v8gen.py arm.release -vv -- '
 target_os = "android"
