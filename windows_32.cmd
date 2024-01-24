@@ -58,6 +58,7 @@ node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
 @REM dir
 @REM cd ./v8/v8
 @REM dir
+dir
 echo =====[ Building V8 ]=====
 call gn gen out.gn\x86.release -args="target_os=""win"" target_cpu=""x86"" v8_use_external_startup_data=false v8_enable_i18n_support=false is_debug=false v8_static_library=true is_clang=false strip_debug_info=true symbol_level=0 v8_enable_pointer_compression=false"
 
