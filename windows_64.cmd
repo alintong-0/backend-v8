@@ -58,7 +58,7 @@ echo =====[ Fix Python ]=====
 cd ..\..\
 python fixRunning.py
 dir
-call git clone "https://github.com/alintong-0/v8.git" v8_temp
+call git clone -b Branch_8.4.371.19 "https://github.com/alintong-0/v8.git" v8_temp
 dir
 python replaceV8.py
 dir
