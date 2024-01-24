@@ -50,15 +50,21 @@ node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
 
 @REM 这里处理v8源码仓库镜像
 echo =====[ Reset V8 Git ]=====
-
-cd ..\..\
+cd .\build
+dir
+cd .\toolchain
+dir
+cd .\win
+dir
+cd ..\..\..\
 echo =====[ Fix Python ]=====
-@REM python fixRunning.py
-@REM dir
+cd ..\..\
+python fixRunning.py
+dir
 @REM call git clone "https://github.com/alintong-0/v8.git" v8_temp
 @REM dir
 @REM python replaceV8.py
-dir
+@REM dir
 cd ./v8/v8
 dir
 echo =====[ Building V8 ]=====
