@@ -53,7 +53,7 @@ echo =====[ Reset V8 Git ]=====
 
 cd ..\..\
 echo =====[ Fix Python ]=====
-python fixRunning.py
+@REM python fixRunning.py
 @REM dir
 @REM call git clone "https://github.com/alintong-0/v8.git" v8_temp
 @REM dir
