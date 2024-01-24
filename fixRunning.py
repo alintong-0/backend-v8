@@ -10,6 +10,7 @@ with open(file_path, "r") as file:
 with open(file_path, "w") as file:
     found = False
     for line in lines:
+        print(line)
         if search_string in line:
             found = True
             file.write(line)  # Write the line containing the search string
