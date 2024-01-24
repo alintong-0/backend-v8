@@ -47,9 +47,6 @@ node %~dp0\node-script\add_arraybuffer_new_without_stl.js .
 
 @REM 这里处理v8源码仓库镜像
 echo =====[ Reset V8 Git ]=====
-
-cd ..\..\
-
 cd .\build
 dir
 cd .\toolchain
