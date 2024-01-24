@@ -18,7 +18,7 @@ cd ..
 call gclient
 
 cd depot_tools
-call git reset --hard 8d16d4a
+@REM call git reset --hard 8d16d4a
 dir
 cd ..
 set DEPOT_TOOLS_UPDATE=0

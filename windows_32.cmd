@@ -12,10 +12,14 @@ set PATH=%CD%\depot_tools;%PATH%
 set GYP_MSVS_VERSION=2019
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
 
+cd depot_tools
+dir
+cd ..
 call gclient
 
 cd depot_tools
 @REM call git reset --hard 8d16d4a
+dir
 cd ..
 set DEPOT_TOOLS_UPDATE=0
 
