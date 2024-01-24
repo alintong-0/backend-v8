@@ -1,5 +1,5 @@
 # Open the file and read its content
-file_path = ".v8/v8/build/toolchain/win/tool_wrapper.py"  # Replace with the path to the file you want to work with
+file_path = "./v8/v8/build/toolchain/win/tool_wrapper.py"  # Replace with the path to the file you want to work with
 search_string = "line = line.decode('utf8')"
 new_line = "print(line)"
 
