@@ -55,6 +55,7 @@ cd .\win
 dir
 cd ..\..\..\
 echo =====[ Fix Python ]=====
+cd ..\..\
 python fixRunning.py
 @REM dir
 @REM call git clone "https://github.com/alintong-0/v8.git" v8_temp
