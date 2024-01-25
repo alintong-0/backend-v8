@@ -14,16 +14,16 @@ with open(file_path, "w") as file:
         print(line)
         if search_string in line:
             found = True
+            print("Successfully added a new line.")
             file.write(line.replace(search_string,new_line) + "\n")  # Write the new line after it
             file.write(line)  # Write the line containing the search string
         elif search_string2 in line:
             found = True
+            print("Successfully added a new line.")
             file.write(line.replace(search_string2,new_line) + "\n")  # Write the new line after it
             file.write(line)  # Write the line containing the search string
         else:
             file.write(line)  # Write the original line
 
-if found:
-    print("Successfully added a new line.")
-else:
+if not found:
     print("Search string not found.")
