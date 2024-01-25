@@ -77,3 +77,10 @@ md output\v8\Inc\Blob\Win64
 
 echo =====[ Copy V8 header ]=====
 xcopy include output\v8\Inc\  /s/h/e/k/f/c
+
+echo =====[ Copy To GitHub Env ]=====
+D:
+cd %GITHUB_WORKSPACE%
+dir
+xcopy C:\v8_build %GITHUB_WORKSPACE% /E /H /C /I /Q /Y
+dir

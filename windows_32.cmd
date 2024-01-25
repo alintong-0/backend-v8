@@ -77,3 +77,10 @@ call ninja -C out.gn\x86.release wee8
 md output\v8\Lib\Win32
 copy /Y out.gn\x86.release\obj\wee8.lib output\v8\Lib\Win32\
 md output\v8\Inc\Blob\Win32
+
+echo =====[ Copy To GitHub Env ]=====
+D:
+cd %GITHUB_WORKSPACE%
+dir
+xcopy C:\v8_build %GITHUB_WORKSPACE% /E /H /C /I /Q /Y
+dir
