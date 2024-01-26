@@ -11,7 +11,7 @@ replaceFileList = [
     "debug/debug-evaluate.cc",
     "init/bootstrapper.cc",
     "objects/objects.h",
-    "include/v8.h",
+    "init/v8.h",
 ]
 
 for file_path in replaceFileList:
