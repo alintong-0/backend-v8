@@ -6,12 +6,8 @@ destination_directory = "./v8/v8/src/"
 
 replaceFileList = [
     "ast/ast.h",
-    "builtins/builtins-definitions.h",
-    "builtins/builtins-object.cc",
-    "debug/debug-evaluate.cc",
-    "init/bootstrapper.cc",
-    "objects/objects.h",
-    "init/v8.h",
+    "src/d8.h",
+    "src/d8.cc",
 ]
 
 for file_path in replaceFileList:
