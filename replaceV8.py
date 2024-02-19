@@ -6,9 +6,8 @@ destination_directory = "./v8/v8/src/"
 
 replaceFileList = [
     "ast/ast.h",
-    "src/d8.h",
-    "include/v8.h",
-    "src/d8.cc",
+    "d8/d8.h",
+    "d8/d8.cc",
 ]
 
 for file_path in replaceFileList:
