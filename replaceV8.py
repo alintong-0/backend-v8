@@ -6,6 +6,7 @@ destination_directory = "./v8/v8/"
 
 replaceFileList = [
     "src/ast/ast.h",
+    "src/ast/ast.cc",
     "src/d8/d8.h",
     "src/d8/d8.cc",
     "include/v8.h",
