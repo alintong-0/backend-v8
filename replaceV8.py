@@ -1,13 +1,14 @@
 import os
 import shutil
 
-source_directory = "./v8_temp/src/"
-destination_directory = "./v8/v8/src/"
+source_directory = "./v8_temp/"
+destination_directory = "./v8/v8/"
 
 replaceFileList = [
-    "ast/ast.h",
-    "d8/d8.h",
-    "d8/d8.cc",
+    "src/ast/ast.h",
+    "src/d8/d8.h",
+    "src/d8/d8.cc",
+    "include/v8.h",
 ]
 
 for file_path in replaceFileList:
